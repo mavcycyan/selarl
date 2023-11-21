@@ -1,0 +1,295 @@
+/*header*/
+@media (min-width: 992px) {
+  .h {
+    &-rdv {
+      &:hover {
+        .icon {
+          transform: rotate(180deg);
+        }
+        .h-rdv-list {
+          pointer-events: all;
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .header {
+    .home & {
+      top: 66vw;
+      max-width: 100%;
+      border-radius: 0;
+    }
+    &-anchor {
+      .home & {
+        top: 66vw;
+      }
+    }
+  }
+
+  .h {
+    &-rdv {
+      padding-left: 10px;
+      &.active {
+        .icon {
+          transform: rotate(180deg);
+        }
+        .h-rdv-list {
+          pointer-events: all;
+          opacity: 1;
+          transition: 0.3s;
+        }
+      }
+    }
+    &-menu {
+      .header & {
+        display: none;
+      }
+    }
+    &-esp {
+      .header & {
+        display: none;
+      }
+    }
+  }
+}
+/*header*/
+
+/*fix_data*/
+@media (max-width: 991.98px) {
+  .fix_data {
+    &-menu {
+      ul {
+        li {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/*fix_data*/
+
+/*main*/
+@media (max-width: 1599.98px) {
+  .main {
+    &-contacts {
+      &-bl {
+        padding: 1.4vw 6.8vw;
+      }
+    }
+  }
+}
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .main {
+    &-values {
+      &-bl {
+        &-img {
+          svg {
+            width: 100px;
+            height: auto;
+          }
+        }
+      }
+    }
+    &-contacts {
+      &-bl {
+        padding: 1.4vw 6.8vw;
+        &-item {
+          margin-bottom: 10px;
+          a, span {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  .main {
+    &-first {
+      min-height: 55vw;
+      height: auto;
+      &-video {
+        min-height: 55vw;
+        height: auto;
+      }
+      &-logo {
+        display: none;
+      }
+    }
+    &-second {
+      margin-top: 20vw;
+      &-ttl {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 40px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+      &-subttl {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 34px;
+        letter-spacing: 0.48px;
+        text-transform: uppercase;
+      }
+      &-txt {
+        margin-bottom: 40px;
+      }
+      &-btn {
+        text-align: right;
+      }
+    }
+    &-values {
+      &-back {
+        display: none;
+      }
+
+      &-row {
+        position: static;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="347" height="1075" viewBox="0 0 347 1075" fill="none"><path d="M346 294.726L346 61C346 27.8629 319.137 0.999999 286 0.999997L61.0001 0.999988C27.863 0.999986 1.00006 27.8629 1.00006 61L1.00005 297.043C1.00005 330.18 27.863 357.043 61 357.043L286 357.043C319.137 357.043 346 383.906 346 417.043L346 657.332C346 690.469 319.137 717.332 286 717.332L61 717.332C27.8629 717.332 1.00003 744.195 1.00003 777.332L1.00002 1014C1.00001 1047.14 27.8629 1074 61 1074L286 1074C319.137 1074 346 1047.14 346 1014L346 780.274" stroke="white" stroke-linecap="round"/></svg>');
+        background-size: 100% auto;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        max-width: 296px;
+        margin: 0 auto;
+      }
+
+      &-bl {
+        width: 100%;
+        min-height: 306px;
+        height: 306px;
+        padding: 32px;
+      }
+    }
+    &-traits {
+      &-img {
+        position: static;
+        margin-bottom: 20px;
+        width: auto;
+        &-wrap {
+          height: auto;
+        }
+      }
+    }
+    &-contacts {
+      &-back {
+        display: none;
+      }
+
+      &-row {
+        position: static;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="347" height="1075" viewBox="0 0 347 1075" fill="none"><path d="M346 294.726L346 61C346 27.8629 319.137 0.999999 286 0.999997L61.0001 0.999988C27.863 0.999986 1.00006 27.8629 1.00006 61L1.00005 297.043C1.00005 330.18 27.863 357.043 61 357.043L286 357.043C319.137 357.043 346 383.906 346 417.043L346 657.332C346 690.469 319.137 717.332 286 717.332L61 717.332C27.8629 717.332 1.00003 744.195 1.00003 777.332L1.00002 1014C1.00001 1047.14 27.8629 1074 61 1074L286 1074C319.137 1074 346 1047.14 346 1014L346 780.274" stroke="white" stroke-linecap="round"/></svg>');
+        background-size: 100% auto;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        max-width: 296px;
+        margin: 0 auto;
+      }
+
+      &-bl {
+        width: 100%;
+        min-height: 306px;
+        height: 306px;
+        padding: 32px;
+        &-btn {
+          justify-content: center!important;
+          padding-top: 10px;
+        }
+        &-item {
+          a, span {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+/*main*/
+
+
+/*arch-clin*/
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .arch-clin{
+    &-posts {
+      &-imgs {
+        flex-direction: column;
+      }
+      &-img {
+        margin: 0 0 15px!important;
+        max-width: 100%;
+      }
+    }
+  }
+}
+/*arch-clin*/
+
+/*arch-articles*/
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .arch-faq {
+    &-posts {
+      &-bl {
+        &-ttl {
+          font-size: 22px;
+          line-height: 28px;
+        }
+        &:hover {
+          .arch-faq-posts-bl-btn {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+/*arch-articles*/
+
+
+/*footer*/
+@media(max-width: 991.98px) {
+  .f {
+    &-logo {
+      text-align: center;
+      svg {
+        width: 207px;
+        height: auto;
+        text-align: center;
+      }
+    }
+    &-menu {
+      ul {
+        li {
+          a {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    &-btn {
+      a {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        padding: 35px 15px;
+      }
+    }
+  }
+}
+/*footer*/
