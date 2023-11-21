@@ -108,13 +108,6 @@
                 {
                     breakpoint: 992,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                     }
@@ -298,5 +291,17 @@
         });
     })
     /*modal-patient*/
+
+
+    /*cabinet-gal*/
+    $(document).ready(function(){
+        var contW = 1920 / 1.0464355788096795;
+        $('.js-cabinGalImg').each(function(){
+            var natW = this.naturalWidth + 30;
+            var perc = natW * 100 / contW;
+            $(this).closest('.js-cabinGalImgCol').css('width', perc + '%');
+        })
+    })
+    /*cabinet-gal*/
 
 }( jQuery ) );

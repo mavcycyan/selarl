@@ -10,31 +10,34 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main class="single_page">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		<section class="top_section">
+			<div class="section-in section-lines">
+				<div class="container">
+					<h1 class="h1 top_section-ttl"><?php the_title(); ?></h1>
+					<div class="breadcrumbs">
+						<a href="<?php echo get_home_url(); ?>" class="crumb home">Accueil</a>
+						<span class="crumb last_crumb"><?php the_title(); ?></span>
+					</div>
+				</div>
+			</div>
+		</section>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+		<section class="single_page-wrap">
+			<div class="container">
+				<?php /* ?><div class="single_page-img"><?php the_post_thumbnail(); ?></div><?php */ ?>
+				<div class="content-block single_page-content"><?php the_content(); ?></div>
+			</div>
+		</section>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'selarl' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'selarl' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+		<div class="container">
+			<div class="single_page-ret">
+				<a href="<?php echo get_home_url(); ?>/equipe/" class="btn">Retour</a>
+			</div>
+		</div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+	</main>
 
 <?php
-get_sidebar();
 get_footer();

@@ -97,6 +97,11 @@
 									</div>
 								</div>
 								<div class="main-contacts-bl">
+									<?php if (isset($contacts_blocks['second']['bg']) && $contacts_blocks['second']['bg']['url'] != ''): ?>
+										<?php if ($contacts_blocks['second']['bg'] && $contacts_blocks['second']['bg']['url'] !== ''): ?>
+											<div class="main-contacts-bl-bg" style="background-image: url('<?php echo $contacts_blocks['second']['bg']['url']; ?>');"></div>
+										<?php endif; ?>
+									<?php endif; ?>
 									<?php if (isset($contacts_blocks['second']['link_data']['link']) && $contacts_blocks['second']['link_data']['link'] != '') : ?>
 										<div class="main-contacts-bl-btn">
 											<a href="<?php echo $contacts_blocks['second']['link_data']['link']; ?>" <?php echo ($contacts_blocks['second']['link_data']['blank']) ? 'target="_blank"' : ""; ?> class="btn">Visite virtuelle de <br>notre cabinet</a>

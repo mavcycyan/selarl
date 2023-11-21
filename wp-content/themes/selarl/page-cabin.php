@@ -78,10 +78,10 @@ get_header();
 					</div>
 					<div class="page-cabin-gal-row">
 						<?php foreach($gal as $item) : ?>
-							<div class="page-cabin-gal-col">
+							<div class="page-cabin-gal-col js-cabinGalImgCol">
 								<div class="page-cabin-gal-bl">
 									<div class="page-cabin-gal-bl-img">
-										<img src="<?php echo $item['img']['url'] ?>" alt="<?php echo $item['ttl'] ?>">
+										<img src="<?php echo $item['img']['url'] ?>" alt="<?php echo $item['ttl'] ?>" class="js-cabinGalImg">
 										<div class="page-cabin-gal-bl-txt">
 											<div class="page-cabin-gal-bl-txt-in">
 												<?php echo $item['txt'] ?>

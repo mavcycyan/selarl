@@ -140,7 +140,7 @@ get_header();
 		<?php $hide = get_field('main-team-hid'); ?>
 		<?php if (!$hide) : ?>
 			<?php $team_img = get_field('main-team-img'); ?>
-			<section class="main-team" <?php echo ($team_img) ? 'style="background-image: url(\'' . $team_img['url'] . '\')";' : ''; ?>>
+			<section id="equipe" class="main-team" <?php echo ($team_img) ? 'style="background-image: url(\'' . $team_img['url'] . '\')";' : ''; ?>>
 				<div class="section-in section-lines">
 					<div class="main-team-bl">
 						<div class="container">
@@ -163,7 +163,7 @@ get_header();
 
 		<?php $hide = get_field('main-traits-hid'); ?>
 		<?php if (!$hide) : ?>
-			<section id="traits" class="main-traits">
+			<section id="traitements" class="main-traits">
 				<div class="section-in section-lines">
 					<div class="container">
 						<h2 class="h2 main-traits-ttl d-block d-md-none"><?php the_field('main-traits-ttl'); ?></h2>
@@ -237,7 +237,8 @@ get_header();
 		<?php $hide = get_field('main-faq-hid'); ?>
 		<?php if (!$hide) : ?>
 			<?php $faq_img = get_field('main-faq-img'); ?>
-			<section class="main-faq" <?php echo ($faq_img) ? 'style="background-image: url(\'' . $faq_img['url'] . '\')";' : ''; ?>>
+			<section id="faq" class="main-faq" <?php echo ($faq_img) ? 'style="background-image: url(\'' . $faq_img['url'] . '\')";' : ''; ?>>
+				<div class="main-faq-overlay"></div>
 				<div class="section-in section-lines">
 					<div class="main-faq-bl">
 						<div class="container">
@@ -264,7 +265,7 @@ get_header();
 
 		<?php $hide = get_field('main-contacts-hid'); ?>
 		<?php if (!$hide) : ?>
-			<section class="main-contacts">
+			<section id="contacts" class="main-contacts">
 				<div class="section-in">
 					<?php $contacts_blocks = get_field('main-contacts'); ?>
 					<div class="main-contacts-wrap">

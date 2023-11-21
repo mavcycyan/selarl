@@ -199,6 +199,10 @@ main {
     @media (max-width: 1599.98px) {
         padding: 44px 20px;
     }
+    @media (max-width: 767.98px) {
+        width: 200px;
+        padding: 30px 20px;
+    }
 }
 /*btns*/
 
@@ -491,6 +495,9 @@ h4, .h4 {
     margin-bottom: 60px;
     .section-in.section-lines {
         padding: 3vw 0;
+        @media (max-width: 767.98px) {
+            padding: 7vw 0;
+        }
     }
     &-ttl {
         margin-bottom: 30px;
@@ -604,6 +611,31 @@ h4, .h4 {
     &-bl {
         width: 100%;
         max-width: 620px;
+    }
+    @media (max-width: 991.98px) {
+        &-slider {
+            &-pagination {
+                position: static;
+                margin: 30px auto 0;
+            }
+        }
+    }
+    @media (max-width: 767.98px) {
+        .section-in {
+            padding-top: 65vw;
+        }
+        &-slider {
+            height: 116vw;
+        }
+        &-overlay {
+            height: 116vw;
+        }
+        &-slide {
+            &-img {
+                background-size: auto 100%;
+                background-position: center top;
+            }
+        }
     }
 }
 /*top_slider_section*/
