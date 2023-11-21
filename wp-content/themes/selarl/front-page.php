@@ -65,10 +65,10 @@ get_header();
 					<div class="main-second-bl">
 						<div class="container">
 								<div class="row">
-									<div class="col-12 col-lg-6">
+									<div class="col-12 col-lg-5">
 										<h1 class="main-second-ttl"><?php the_field('main-second-title'); ?></h1>
 										<div class="main-second-subttl"><?php the_field('main-second-subtitle'); ?></div>
-										<div class="main-second-txt"><?php the_field('main-second-txt'); ?></div>
+										<div class="content-block main-second-txt"><?php the_field('main-second-txt'); ?></div>
 									</div>
 								</div>
 

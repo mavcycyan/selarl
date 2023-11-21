@@ -835,6 +835,10 @@
   }
 }
 @media(max-width: 991.98px) {
+
+  .footer {
+    padding-top: 15vw;
+  }
   .f {
     &-logo {
       text-align: center;
@@ -868,6 +872,12 @@
         padding: 35px 15px;
       }
     }
+  }
+}
+@media(max-width: 767.98px) {
+
+  .footer {
+    padding-top: 120px;
   }
 }
 /*footer*/

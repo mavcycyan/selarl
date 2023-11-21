@@ -154,7 +154,7 @@ function faq_ajax() {
             $html .= '<div class="col-12 col-md-6">';
             $html .= '    <div class="arch-faq-posts-bl">';
             $html .= '        <div class="arch-faq-posts-bl-img">';
-            $html .=             get_the_post_thumbnail($post->ID, 'faq-thumb');
+            $html .= '            <img src="' . get_the_post_thumbnail_url($post->ID, 'faq-thumb') . '" />';
             $html .= '        </div>';
             $html .= '        <div class="arch-faq-posts-bl-data">';
             $html .= '            <div class="arch-faq-posts-bl-cat-wrap">';

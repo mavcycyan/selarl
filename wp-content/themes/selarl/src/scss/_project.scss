@@ -159,19 +159,35 @@
 
 /*fixed_data*/
 .fix_data {
-  background: $color_dark;
   position: fixed;
   top: -100%;
   left: 0;
   z-index: 9999;
   width: 100vw;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
   padding: 16px 0 61px;
   transition: 0.3s;
   &.active {
     top: 0;
     transition: 0.3s;
+  }
+  &-overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(180deg,#0b1f30 0%,rgba(11,31,48,.85) 50.52%,#0b1f30 100%);
+    backdrop-filter: blur(6px);
+  }
+  &-container {
+    position: relative;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
   }
   &-menu {
     padding-top: 7vw;
@@ -238,6 +254,7 @@
     }
   }
   &-contacts {
+    padding-bottom: 60px;
     .main-contacts-bl {
       min-height: 25vw;
     }
@@ -1307,6 +1324,7 @@
       background: none;
       border: 0;
       padding: 0;
+      z-index: 2;
     }
   }
   &-cats {
@@ -1678,7 +1696,7 @@
 
 /*footer*/
 .footer {
-  padding-top: 60px;
+  padding-top: 11vw;
 }
 
 .f {

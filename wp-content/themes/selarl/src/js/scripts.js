@@ -11,9 +11,11 @@
 
     $('.js-hMenuBtn').click(function() {
         $('.js-fixData').addClass('active');
+        $('.js-header').addClass('d-none');
     });
     $('.js-hMenuCls').click(function() {
         $('.js-fixData').removeClass('active');
+        $('.js-header').removeClass('d-none');
     });
     /*header*/
 

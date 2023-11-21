@@ -219,7 +219,7 @@ get_header();
 
 		<div class="container">
 			<div class="page-equipe-ret">
-				<a href="<?php echo get_home_url(); ?>" class="btn">Retour</a>
+				<a href="javascript:history.back()" class="btn">Retour</a>
 			</div>
 		</div>
 

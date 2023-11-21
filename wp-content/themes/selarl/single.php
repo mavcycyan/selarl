@@ -33,7 +33,7 @@ get_header();
 
 		<div class="container">
 			<div class="single_page-ret">
-				<a href="<?php echo get_home_url(); ?>/equipe/" class="btn">Retour</a>
+				<a href="javascript:history.back()" class="btn">Retour</a>
 			</div>
 		</div>
 

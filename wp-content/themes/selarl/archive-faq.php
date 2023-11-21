@@ -165,7 +165,7 @@ $posts_per_page = 6;
 			</div>
 			<div class="container">
 				<div class="arch-clin-btm-btn">
-					<a href="<?php echo get_home_url(); ?>" class="btn">Retour</a>
+					<a href="javascript:history.back()" class="btn">Retour</a>
 				</div>
 			</div>
 		</section>
