@@ -259,7 +259,7 @@ get_header();
 					<div class="main-faq-bl">
 						<div class="container">
 							<div class="row">
-								<div class="col-12 col-lg-6">
+								<div class="col-12 col-lg-5">
 									<h2 class="h2 main-faq-ttl"><?php the_field('main-faq-title'); ?></h2>
 									<div class="main-faq-txt"><?php the_field('main-faq-txt'); ?></div>
 								</div>

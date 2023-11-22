@@ -84,6 +84,15 @@
     }
   }
 }
+@media (min-width: 1200px) {
+  .main {
+    &-second {
+      &-ttl {
+        font-size: 3vw;
+      }
+    }
+  }
+}
 @media (max-width: 1199.98px) and (min-width: 992px) {
   .main {
     &-values {
