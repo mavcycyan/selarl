@@ -111,6 +111,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="f-grad"></div>
 	</footer>
 
 <?php wp_footer(); ?>

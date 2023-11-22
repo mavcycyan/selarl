@@ -234,6 +234,22 @@ get_header();
 			</section>
 		<?php endif; unset($hide); ?>
 
+		<?php $hide = get_field('main-insta-hid'); ?>
+		<?php if (!$hide) : ?>
+			<section id="insta" class="main-insta">
+				<div class="section-in">
+					<div class="container">
+						<h2 class="h2 main-insta-ttl">
+							<?php the_field('main-insta-title'); ?>
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.667 2.667H9.333a6.667 6.667 0 0 0-6.666 6.666v13.333a6.667 6.667 0 0 0 6.666 6.667h13.334a6.667 6.667 0 0 0 6.666-6.666V9.332a6.667 6.667 0 0 0-6.666-6.667Z"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.333 15.16a5.333 5.333 0 1 1-10.551 1.564 5.333 5.333 0 0 1 10.551-1.564ZM23.333 8.666h.01"/></svg>
+						</h2>
+					</div>
+					<div class="main-insta-cont"><?php apply_filters('the_content', get_field('main-insta-shortcode')); ?></div>
+				</div>
+			</section>
+		<?php endif; unset($hide); ?>
+
+
 		<?php $hide = get_field('main-faq-hid'); ?>
 		<?php if (!$hide) : ?>
 			<?php $faq_img = get_field('main-faq-img'); ?>

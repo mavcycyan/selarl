@@ -19,7 +19,7 @@ get_header();
 					<div class="breadcrumbs">
 						<a href="<?php echo get_home_url(); ?>" class="crumb home">Accueil</a>
 						<a href="<?php echo get_home_url(); ?>/equipe" class="crumb">Notre équipe</a>
-						<span class="crumb last_crumb">Notre équipe</span>
+						<span class="crumb last_crumb"><?php the_title(); ?></span>
 					</div>
 				</div>
 			</div>

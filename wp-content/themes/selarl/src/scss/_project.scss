@@ -512,11 +512,28 @@
     }
   }
 
+  &-insta {
+    margin-top: 7vw;
+    padding: 2vw 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="945" height="1265" fill="none"><g clip-path="url(%23a)"><g filter="url(%23b)" opacity=".17"><ellipse cx="456.5" cy="450.5" fill="%236AAEED" rx="456.5" ry="450.5" transform="matrix(-1 0 0 1 1291 69)"/></g><g filter="url(%23c)" opacity=".12"><ellipse cx="289.5" cy="273" fill="%23E43CBF" rx="289.5" ry="273" transform="matrix(-1 0 0 1 1234 520)"/></g></g><defs><filter id="b" width="1513" height="1501" x="78" y="-231" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2684_2158" stdDeviation="150"/></filter><filter id="c" width="1179" height="1146" x="355" y="220" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2684_2158" stdDeviation="150"/></filter><clipPath id="a"><path fill="%23fff" d="M0 0h945v1265H0z"/></clipPath></defs></svg>');
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    background-size: 36vw auto;
+    background-color: $color_darkest;
+    &-ttl {
+      margin-bottom: 40px;
+    }
+  }
+
+
   &-faq {
     margin-top: 7vw;
     background-size: cover;
     background-position: center left;
     position: relative;
+    .main-insta + & {
+      margin-top: 0;
+    }
     &-overlay {
       position: absolute;
       z-index: 1;
@@ -706,6 +723,12 @@
 /*main*/
 
 /*page-team*/
+.post-type-archive-equipe {
+  background: $color_darkest;
+  .header.fixed {
+    background: $color_darkest;
+  }
+}
 .page-team {
   &-section {
     margin-bottom: 60px;
@@ -905,6 +928,13 @@
 /*page-team*/
 
 /*single-team*/
+
+.single-equipe {
+  background: $color_darkest;
+  .header.fixed {
+    background: $color_darkest;
+  }
+}
 .single-team {
   &-data {
     margin-bottom: 40px;
@@ -985,6 +1015,12 @@
 /*single-team*/
 
 /*tax-trait*/
+.tax-traitement {
+  background: $color_darkest;
+  .header.fixed {
+    background: $color_darkest;
+  }
+}
 .tax-trait {
   &-top {
     border-bottom: 1px solid $color_white;
@@ -1169,6 +1205,12 @@
 /*tax-trait*/
 
 /*arch-clin*/
+.post-type-archive-cas-cliniques {
+  background: $color_darkest;
+  .header.fixed {
+    background: $color_darkest;
+  }
+}
 .arch-clin {
   &-wrap {
     margin-bottom: 60px;
@@ -1428,6 +1470,12 @@
 /*arch-faq*/
 
 /*arch-articles*/
+.post-type-archive-articles {
+  background: $color_darkest;
+  .header.fixed {
+    background: $color_darkest;
+  }
+}
 .arch-articles {
   &-cats {
     ul {
@@ -1697,6 +1745,11 @@
 /*footer*/
 .footer {
   padding-top: 11vw;
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .f {
@@ -1764,6 +1817,17 @@
     &_3 {
       text-align: right;
     }
+  }
+
+  &-grad {
+    width: 65vw;
+    height: 45vw;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1211" height="871" fill="none"><g clip-path="url(%23a)"><g filter="url(%23b)" opacity=".08"><ellipse cx="1004.5" cy="745.5" fill="%236AAEED" rx="448.5" ry="442.5"/></g><g filter="url(%23c)" opacity=".08"><ellipse cx="845.5" cy="871" fill="%23E43CBF" rx="289.5" ry="273"/></g></g><defs><filter id="b" width="1497" height="1485" x="256" y="3" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_3375_1125" stdDeviation="150"/></filter><filter id="c" width="1179" height="1146" x="256" y="298" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_3375_1125" stdDeviation="150"/></filter><clipPath id="a"><path fill="%23fff" d="M0 0h1211v871H0z"/></clipPath></defs></svg>');
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
   }
 }
 /*footer*/

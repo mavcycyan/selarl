@@ -1,6 +1,7 @@
 $color_white: #ffffff;
 $color_black: #000000;
 $color_dark: #032032;
+$color_darkest: #071521;
 $color_gray: #63727F;
 
 
@@ -66,7 +67,7 @@ $color_gray: #63727F;
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     font-size: 16px;
     font-weight: 400;
     background: $color_dark;
@@ -370,7 +371,7 @@ h4, .h4 {
         top: 0;
         height: 100%;
         left: -100%;
-        padding: 10vw 9vw;
+        padding: 6vw 9vw 4vw;
         background: $color_dark;
         overflow: auto;
         max-width: 50%;
