@@ -47,6 +47,18 @@
                     $(this).closest('section').find('.js-teamSliderPagination').addClass('d-none');
                 }
             });
+            $(this).on("setPosition", function(event, slick) {
+                if ($(window).width() >= 992) {
+                    var _this =  $(this);
+                    var cnt = slick.options.slidesToScroll;
+                    setTimeout(function(){
+                        if (Math.ceil(slick.slideCount / cnt) <= 1) {
+                            _this.find('.slick-track').width(_this.find('.slick-list').width());
+                            _this.find('.slick-track .slick-slide').width(_this.find('.slick-list').width() / slick.slideCount);
+                        }
+                    }, 1000);
+                }
+            });
             $(this).slick({
                 dots: false,
                 arrows: true,
@@ -270,6 +282,7 @@
     /*modal*/
     $('.js-modalOpen').click(function(e){
         e.preventDefault();
+        $('.js-modal').removeClass('active');
         $('.js-modal[data-modal="'+$(this).data('modal')+'"]').addClass('active');
     });
     $('.js-modalClose').click(function(){

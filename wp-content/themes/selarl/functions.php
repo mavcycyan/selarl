@@ -146,10 +146,10 @@ function selarl_scripts() {
     wp_enqueue_style( 'selarl-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), _S_VERSION );
     wp_enqueue_style( 'selarl-slick', get_template_directory_uri() . '/assets/css/slick.css', array(), _S_VERSION );
 
-    wp_enqueue_style( 'selarl-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION );
+    wp_enqueue_style( 'selarl-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION . '.2.3' );
 
     wp_enqueue_script( 'selarl-slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), _S_VERSION, array('in_footer' => true) );
-    wp_enqueue_script( 'selarl-main', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), _S_VERSION, array('in_footer' => true) );
+    wp_enqueue_script( 'selarl-main', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), _S_VERSION . '.2.3', array('in_footer' => true) );
 }
 add_action( 'wp_enqueue_scripts', 'selarl_scripts' );
 

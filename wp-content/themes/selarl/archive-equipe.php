@@ -50,7 +50,7 @@ get_header();
 						?>
 						<div class="page-team-wrap">
 							<h2 class="h2 page-team-subttl">Chirurgien-dentiste</h2>
-							<div class="team-slider js-teamSlider">
+							<div class="team-slider js-teamSlider" data-ii="ii-1">
 								<?php
 								$index = 1;
 								while ( $the_query->have_posts() ) :
@@ -119,7 +119,7 @@ get_header();
 						?>
 						<div class="page-team-wrap">
 							<h2 class="h2 page-team-subttl">Assistantes cliniques</h2>
-							<div class="team-slider js-teamSlider">
+							<div class="team-slider js-teamSlider" data-ii="ii-2">
 								<?php
 								$index = 1;
 								while ( $the_query->have_posts() ) :
@@ -181,7 +181,7 @@ get_header();
 						?>
 						<div class="page-team-wrap">
 							<h2 class="h2 page-team-subttl">Pôle administratif</h2>
-							<div class="team-slider js-teamSlider">
+							<div class="team-slider js-teamSlider" data-ii="ii-3">
 								<?php
 								$index = 1;
 								while ( $the_query->have_posts() ) :

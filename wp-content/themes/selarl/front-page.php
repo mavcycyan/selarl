@@ -24,7 +24,7 @@ get_header();
 			<?php if ($first_vid) : ?>
 				<div class="main-first-video">
 					<video
-						width="100%" autoplay loop muted>
+						width="100%" autoplay loop muted webkit-playsinline="true" playsinline="true">
 						<source
 							src="<?php echo $first_vid['url']; ?>"
 							type="video/mp4" />

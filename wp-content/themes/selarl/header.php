@@ -126,26 +126,29 @@
 							</div>
 							<?php unset($contacts_blocks); ?>
 						</div>
-						<div class="modal_window js-modal" data-modal="contacts">
-							<div class="modal_window-overlay js-modalClose"></div>
-							<div class="modal_window-wrap">
-								<div class="modal_window-cls js-modalClose">
-									<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
-										<path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
-									</svg>
-								</div>
-								<div class="form">
-									<div class="form-ttl">CONTACTEZ-NOUS</div>
-									<?php echo str_replace('<br>', '', do_shortcode('[contact-form-7 id="9b338ab" title="Contact form"]')); ?>
-								</div>
-							</div>
-						</div>
 					<?php endif; unset($hide); ?>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php $hide = get_field('main-contacts-hid', 2); ?>
+	<?php if (!$hide) : ?>
+		<div class="modal_window js-modal" data-modal="contacts">
+			<div class="modal_window-overlay js-modalClose"></div>
+			<div class="modal_window-wrap">
+				<div class="modal_window-cls js-modalClose">
+					<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+						<path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="form">
+					<div class="form-ttl">CONTACTEZ-NOUS</div>
+					<?php echo str_replace('<br>', '', do_shortcode('[contact-form-7 id="9b338ab" title="Contact form"]')); ?>
+				</div>
+			</div>
+		</div>
+	<?php endif; unset($hide); ?>
 
 	<div class="header-anchor js-headerAnch"></div>
 	<header class="header js-header">

@@ -1,8 +1,8 @@
 
-<div class="modal_window js-modal" data-modal="patient">
+<div class="modal_window js-modal modal_window-patient" data-modal="patient">
     <div class="modal_window-overlay js-modalClose"></div>
     <?php $bg = get_field('patient-bg', 'options'); ?>
-    <div class="modal_window-wrap modal_window-patient" <?php echo ($bg != '') ? 'style="background-image: url(\'' . $bg['url'] . '\')"' : ''; ?>>
+    <div class="modal_window-wrap" <?php echo ($bg != '') ? 'style="background-image: url(\'' . $bg['url'] . '\')"' : ''; ?>>
         <div class="container">
             <div class="modal_window-patient-top">
                 <div class="modal_window-patient-logo">

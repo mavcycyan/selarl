@@ -160,13 +160,12 @@
 /*fixed_data*/
 .fix_data {
   position: fixed;
-  top: -100%;
+  top: -100vh;
   left: 0;
   z-index: 9999;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  padding: 16px 0 61px;
   transition: 0.3s;
   &.active {
     top: 0;
@@ -188,6 +187,7 @@
     width: 100vw;
     height: 100vh;
     overflow: auto;
+    padding: 16px 0 61px;
   }
   &-menu {
     padding-top: 7vw;

@@ -82,13 +82,16 @@ get_header();
 								<div class="page-cabin-gal-bl">
 									<div class="page-cabin-gal-bl-img">
 										<img src="<?php echo $item['img']['url'] ?>" alt="<?php echo $item['ttl'] ?>" class="js-cabinGalImg">
-										<div class="page-cabin-gal-bl-txt">
+										<div class="page-cabin-gal-bl-txt d-none d-md-block">
 											<div class="page-cabin-gal-bl-txt-in">
 												<?php echo $item['txt'] ?>
 											</div>
 										</div>
 									</div>
 									<div class="page-cabin-gal-bl-ttl"><?php echo $item['ttl'] ?></div>
+									<div class="page-cabin-gal-bl-txt d-block d-md-none">
+										<?php echo $item['txt'] ?>
+									</div>
 								</div>
 							</div>
 						<?php endforeach; ?>
