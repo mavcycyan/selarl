@@ -106,11 +106,17 @@ $posts_per_page = 6;
 														endif;
 													?>
 												</div>
-												<div class="arch-faq-posts-bl-in">
+												<div class="arch-faq-posts-bl-in d-none d-md-block">
 													<div class="arch-faq-posts-bl-ttl"><?php the_title(); ?></div>
 													<div class="arch-faq-posts-bl-btn">
 														<a href="<?php the_permalink(); ?>" class="btn">Voir plus</a>
 													</div>
+												</div>
+											</div>
+											<div class="d-block d-md-none">
+												<div class="arch-faq-posts-bl-ttl"><?php the_title(); ?></div>
+												<div class="arch-faq-posts-bl-btn">
+													<a href="<?php the_permalink(); ?>" class="btn">Voir plus</a>
 												</div>
 											</div>
 										</div>

@@ -221,6 +221,7 @@ $trait = get_queried_object();
 			<?php if (!$hide) : ?>
 				<?php $faq_img = get_field('main-faq-img', 2); ?>
 				<section class="main-faq" <?php echo ($faq_img) ? 'style="background-image: url(\'' . $faq_img['url'] . '\')";' : ''; ?>>
+					<div class="main-faq-overlay"></div>
 					<div class="section-in section-lines">
 						<div class="main-faq-bl">
 							<div class="container">
