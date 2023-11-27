@@ -1,4 +1,20 @@
 ( function( $ ) {
+    /*anim init*/
+    AOS.init();
+    /*anim init*/
+
+    /*preloader*/
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.js-preloader').removeClass('loading');
+            setTimeout(function() {
+                $('.js-preloader').remove();
+            }, 500)
+        }, 1500)
+    });
+    /*preloader*/
+
+
     /*header*/
     $(window).scroll(function(){
         var hHeight = $('.js-header').outerHeight() + $('.js-headerAnch').offset().top;

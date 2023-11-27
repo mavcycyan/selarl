@@ -777,3 +777,23 @@ h4, .h4 {
     }
 }
 /*modal_window-patient*/
+
+/*preloader*/
+.preloader {
+    background: $color_dark;
+    position: fixed;
+    z-index: 99999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s;
+    &.loading {
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+/*preloader*/
