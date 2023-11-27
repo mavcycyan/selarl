@@ -77,9 +77,10 @@ get_header();
 						<h2 class="h2 page-cabin-gal-ttl">Technologies du cabinet</h2>
 					</div>
 					<div class="page-cabin-gal-row">
+						<?php $i = 0; ?>
 						<?php foreach($gal as $item) : ?>
 							<div class="page-cabin-gal-col js-cabinGalImgCol">
-								<div class="page-cabin-gal-bl">
+								<div class="page-cabin-gal-bl" data-aos="fade-up" data-aos-duration="1000" <?php echo ($i != 0) ? 'data-aos-delay="200"' : ''; ?>>
 									<div class="page-cabin-gal-bl-img">
 										<img src="<?php echo $item['img']['url'] ?>" alt="<?php echo $item['ttl'] ?>" class="js-cabinGalImg">
 										<div class="page-cabin-gal-bl-txt d-none d-md-block">
@@ -94,6 +95,7 @@ get_header();
 									</div>
 								</div>
 							</div>
+							<?php $i = ($i == 0) ? $i+1 : 0; ?>
 						<?php endforeach; ?>
 					</div>
 				</div>
