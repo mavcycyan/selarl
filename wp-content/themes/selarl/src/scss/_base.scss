@@ -95,6 +95,7 @@ a, button, input {
 a {
     &:hover {
         color: $color_white;
+        font-style: italic;
     }
 }
 
@@ -196,6 +197,7 @@ main {
         background: $color_white;
         color: $color_dark;
         transition: 0.3s;
+        font-style: normal;
     }
     @media (max-width: 1599.98px) {
         padding: 44px 20px;
@@ -652,6 +654,11 @@ h4, .h4 {
         &:after {
             content: '|';
             margin-left: 15px;
+        }
+        &:hover {
+            &:after {
+                font-style: normal;
+            }
         }
         &.last_crumb {
             padding-right: 0;

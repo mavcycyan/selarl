@@ -67,10 +67,12 @@
                 if ($(window).width() >= 992) {
                     var _this =  $(this);
                     var cnt = slick.options.slidesToScroll;
+                    console.log(slick.slideCount);
+                    console.log(cnt);
                     setTimeout(function(){
                         if (Math.ceil(slick.slideCount / cnt) <= 1) {
                             _this.find('.slick-track').width(_this.find('.slick-list').width());
-                            _this.find('.slick-track .slick-slide').width(_this.find('.slick-list').width() / slick.slideCount);
+                            _this.find('.slick-track .slick-slide').width(_this.find('.slick-list').width() / cnt);
                         }
                     }, 1000);
                 }
@@ -322,17 +324,5 @@
         });
     })
     /*modal-patient*/
-
-
-    /*cabinet-gal*/
-    $(document).ready(function(){
-        var contW = 1920 / 1.0464355788096795;
-        $('.js-cabinGalImg').each(function(){
-            var natW = this.naturalWidth + 30;
-            var perc = natW * 100 / contW;
-            $(this).closest('.js-cabinGalImgCol').css('width', perc + '%');
-        })
-    })
-    /*cabinet-gal*/
 
 }( jQuery ) );

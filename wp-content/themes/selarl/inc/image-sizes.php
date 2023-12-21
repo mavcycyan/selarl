@@ -14,6 +14,7 @@ add_image_size('trait-clin', 940, 788, true);
 add_image_size('clin-tax', 435, 250, true);
 
 add_image_size('cabin-conf', 995, 340);
+add_image_size('cabin-tech', 880, 440, true);
 
 add_image_size('labo-info', 490, 680, true);
 add_image_size('labo-clin', 490, 250, true);

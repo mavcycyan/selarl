@@ -73,14 +73,6 @@
 							</svg>
 						</a>
 					</div>
-					<div class="h-menu_btn-wrap">
-						<button class="h-menu_btn js-hMenuCls">
-							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
-								<path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
-							</svg>
-						</button>
-					</div>
 					<div class="h-right">
 						<div class="h-rdv">
 							<?php $rdv = get_field('rdv', 'options'); ?>
@@ -104,6 +96,14 @@
 								</div>
 							<?php endif; ?>
 						</div>
+					</div>
+					<div class="h-menu_btn-wrap">
+						<button class="h-menu_btn js-hMenuCls">
+							<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+								<path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
+							</svg>
+						</button>
 					</div>
 				</div>
 				<div class="fix_data-menu">
@@ -129,7 +129,7 @@
 								</div>
 								<div class="main-contacts-row">
 									<div class="main-contacts-bl">
-										<h2 class="h2 main-contacts-bl-ttl"><?php echo $contacts_blocks['first']['ttl']; ?></h2>
+										<div class="main-contacts-bl-ttl"><?php echo $contacts_blocks['first']['ttl']; ?></div>
 										<div class="main-contacts-bl-txt"><?php echo $contacts_blocks['first']['txt']; ?></div>
 										<div class="main-contacts-bl-btn">
 											<a href="#" class="btn js-modalOpen" data-modal="contacts">Contactez-nous</a>
@@ -148,10 +148,18 @@
 										<?php endif; ?>
 									</div>
 									<div class="main-contacts-bl">
-										<div class="h2 main-contacts-bl-ttl"><?php echo $contacts_blocks['third']['ttl']; ?></div>
-										<div class="main-contacts-bl-item"><span><?php echo $contacts_blocks['third']['addr']; ?></span></div>
+										<div class="main-contacts-bl-ttl"><?php echo $contacts_blocks['third']['ttl']; ?></div>
 										<div class="main-contacts-bl-item">
-											<a href="<?php echo str_replace(['(', ')', ' ', '-', '_'], '', $contacts_blocks['third']['phn']); ?>"><?php echo $contacts_blocks['third']['phn']; ?></a>
+											<?php if ($contacts_blocks['third']['addr'] && $contacts_blocks['third']['addr']['txt'] != '') : ?>
+												<?php if ($contacts_blocks['third']['addr']['link'] == '') : ?>
+													<span><?php echo $contacts_blocks['third']['addr']['txt']; ?></span>
+												<?php else: ?>
+													<a href="<?php echo $contacts_blocks['third']['addr']['link']; ?>" target="_blank"><?php echo $contacts_blocks['third']['addr']['txt']; ?></a>
+												<?php endif; ?>
+											<?php endif; ?>
+										</div>
+										<div class="main-contacts-bl-item">
+											<a href="tel:<?php echo str_replace(['(', ')', ' ', '-', '_'], '', $contacts_blocks['third']['phn']); ?>"><?php echo $contacts_blocks['third']['phn']; ?></a>
 										</div>
 										<?php if (isset($contacts_blocks['third']['link_data']['link']) && $contacts_blocks['third']['link_data']['link'] != '') : ?>
 											<div class="main-contacts-bl-btn">
@@ -200,13 +208,6 @@
 						</svg>
 					</a>
 				</div>
-				<div class="h-menu_btn-wrap">
-					<button class="h-menu_btn js-hMenuBtn">
-						<svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M-9.71364e-08 1.11111L40 1.11111L40 0L0 -3.49691e-06L-9.71364e-08 1.11111ZM-6.60528e-07 7.55555L40 7.55556L40 6.44445L-5.63391e-07 6.44444L-6.60528e-07 7.55555ZM-1.22392e-06 14L40 14L40 12.8889L-1.12678e-06 12.8889L-1.22392e-06 14Z" fill="white"/>
-						</svg>
-					</button>
-				</div>
 				<div class="h-right">
 					<nav class="h-menu">
 						<?php
@@ -243,6 +244,13 @@
 							</div>
 						<?php endif; ?>
 					</div>
+				</div>
+				<div class="h-menu_btn-wrap">
+					<button class="h-menu_btn js-hMenuBtn">
+						<svg width="40" height="14" viewBox="0 0 40 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M-9.71364e-08 1.11111L40 1.11111L40 0L0 -3.49691e-06L-9.71364e-08 1.11111ZM-6.60528e-07 7.55555L40 7.55556L40 6.44445L-5.63391e-07 6.44444L-6.60528e-07 7.55555ZM-1.22392e-06 14L40 14L40 12.8889L-1.12678e-06 12.8889L-1.22392e-06 14Z" fill="white"/>
+						</svg>
+					</button>
 				</div>
 			</div>
 		</div>

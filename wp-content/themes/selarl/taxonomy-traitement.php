@@ -274,9 +274,17 @@ $trait = get_queried_object();
 								</div>
 								<div class="main-contacts-bl">
 									<div class="h2 main-contacts-bl-ttl"><?php echo $contacts_blocks['third']['ttl']; ?></div>
-									<div class="main-contacts-bl-item"><span><?php echo $contacts_blocks['third']['addr']; ?></span></div>
 									<div class="main-contacts-bl-item">
-										<a href="<?php echo str_replace(['(', ')', ' ', '-', '_'], '', $contacts_blocks['third']['phn']); ?>"><?php echo $contacts_blocks['third']['phn']; ?></a>
+										<?php if ($contacts_blocks['third']['addr'] && $contacts_blocks['third']['addr']['txt'] != '') : ?>
+											<?php if ($contacts_blocks['third']['addr']['link'] == '') : ?>
+												<span><?php echo $contacts_blocks['third']['addr']['txt']; ?></span>
+											<?php else: ?>
+												<a href="<?php echo $contacts_blocks['third']['addr']['link']; ?>" target="_blank"><?php echo $contacts_blocks['third']['addr']['txt']; ?></a>
+											<?php endif; ?>
+										<?php endif; ?>
+									</div>
+									<div class="main-contacts-bl-item">
+										<a href="tel:<?php echo str_replace(['(', ')', ' ', '-', '_'], '', $contacts_blocks['third']['phn']); ?>"><?php echo $contacts_blocks['third']['phn']; ?></a>
 									</div>
 									<?php if (isset($contacts_blocks['third']['link_data']['link']) && $contacts_blocks['third']['link_data']['link'] != '') : ?>
 										<div class="main-contacts-bl-btn">

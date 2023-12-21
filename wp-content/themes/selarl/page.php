@@ -16,23 +16,12 @@ get_header();
 ?>
 
 	<main class="page-text">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+		<div class="container">
+			<h1 class="h1 page-text-ttl mb-3"><?php the_title(); ?></h1>
+			<div class="content-block page-text-txt"><?php the_content(); ?></div>
+		</div>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

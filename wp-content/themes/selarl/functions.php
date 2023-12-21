@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 /**
@@ -143,15 +143,15 @@ add_action( 'widgets_init', 'selarl_widgets_init' );
  */
 function selarl_scripts() {
 
-    wp_enqueue_style( 'selarl-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), _S_VERSION );
-    wp_enqueue_style( 'selarl-slick', get_template_directory_uri() . '/assets/css/slick.css', array(), _S_VERSION );
-    wp_enqueue_style( 'selarl-aos', get_template_directory_uri() . '/assets/css/aos.css', array(), _S_VERSION );
+    wp_enqueue_style( 'selarl-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array() );
+    wp_enqueue_style( 'selarl-slick', get_template_directory_uri() . '/assets/css/slick.css', array() );
+    wp_enqueue_style( 'selarl-aos', get_template_directory_uri() . '/assets/css/aos.css', array() );
 
-    wp_enqueue_style( 'selarl-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION . '.2.5' );
+    wp_enqueue_style( 'selarl-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION );
 
-    wp_enqueue_script( 'selarl-slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), _S_VERSION, array('in_footer' => true) );
-    wp_enqueue_script( 'selarl-aos', get_template_directory_uri() . '/assets/js/aos.js', array(), _S_VERSION, array('in_footer' => true) );
-    wp_enqueue_script( 'selarl-main', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), _S_VERSION . '.2.5', array('in_footer' => true) );
+    wp_enqueue_script( 'selarl-slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), array(), array('in_footer' => true) );
+    wp_enqueue_script( 'selarl-aos', get_template_directory_uri() . '/assets/js/aos.js', array(), array(), array('in_footer' => true) );
+    wp_enqueue_script( 'selarl-main', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery'), _S_VERSION, array('in_footer' => true) );
 }
 add_action( 'wp_enqueue_scripts', 'selarl_scripts' );
 

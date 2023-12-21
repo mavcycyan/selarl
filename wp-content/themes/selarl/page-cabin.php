@@ -28,7 +28,7 @@ get_header();
 				<div class="container">
 					<div class="top_slider_section-bl">
 						<h1 class="h1 top_slider_section-ttl"><?php the_title(); ?></h1>
-						<div class="top_slider_section-txt"><?php the_content(); ?></div>
+						<div class="content-block top_slider_section-txt"><?php the_content(); ?></div>
 					</div>
 
 					<div class="top_slider_section-slider-pagination js-tssSliderPagination" data-all="<?php echo count($slider); ?>">
@@ -55,7 +55,7 @@ get_header();
 							<div class="col-12 col-md-6 col-lg-4 offset-lg-1">
 								<div class="page-cabin-conf-bl">
 									<h2 class="h2 page-cabin-conf-ttl"><?php echo $conf['ttl'] ?></h2>
-									<div class="page-cabin-conf-txt"><?php echo $conf['txt'] ?></div>
+									<div class="content-block page-cabin-conf-txt"><?php echo $conf['txt'] ?></div>
 									<?php if ($conf['link_data']['link'] != '') : ?>
 										<div class="page-cabin-conf-btn">
 											<a href="<?php echo $conf['link_data']['link']; ?>" class="btn" <?php echo ($conf['link_data']['blank']) ? 'target="_blank"' : ""; ?>>En savoir plus</a>
@@ -79,10 +79,9 @@ get_header();
 					<div class="page-cabin-gal-row">
 						<?php $i = 0; ?>
 						<?php foreach($gal as $item) : ?>
-							<div class="page-cabin-gal-col js-cabinGalImgCol">
+							<div class="col-12 col-md-6 page-cabin-gal-col">
 								<div class="page-cabin-gal-bl" data-aos="fade-up" data-aos-duration="1000" <?php echo ($i != 0) ? 'data-aos-delay="200"' : ''; ?>>
-									<div class="page-cabin-gal-bl-img">
-										<img src="<?php echo $item['img']['url'] ?>" alt="<?php echo $item['ttl'] ?>" class="js-cabinGalImg">
+									<div class="page-cabin-gal-bl-img" <?php echo ($item['img']['url']) ? 'style="background-image: url(\'' . $item['img']['url'] . '\');"' : ''; ?>>
 										<div class="page-cabin-gal-bl-txt d-none d-md-block">
 											<div class="page-cabin-gal-bl-txt-in">
 												<?php echo $item['txt'] ?>

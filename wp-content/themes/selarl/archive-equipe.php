@@ -38,6 +38,71 @@ get_header();
 							'relation'      => 'AND',
 							array(
 								'key'       => 'single_equipe-level',
+								'value'     => 'main',
+								'compare'   => '=',
+							),
+						),
+					);
+					$the_query = new WP_Query( $args );
+
+					// The Loop.
+					if ( $the_query->have_posts() ) :
+						?>
+						<div class="page-team-wrap">
+							<h2 class="h2 page-team-subttl">Fondateur du GAD</h2>
+							<div class="team-fond">
+								<?php
+								$index = 1;
+								while ( $the_query->have_posts() ) :
+									$the_query->the_post();
+									?>
+									<div class="team-bl level1">
+										<div class="team-bl-img">
+											<?php the_post_thumbnail(); ?>
+											<div class="team-bl-img-btn">
+												<a href="<?php the_permalink(); ?>" class="btn"><?php the_field('single_equipe-btntxt'); ?></a>
+											</div>
+										</div>
+										<div class="team-bl-info">
+											<?php if ($ext = get_field('single_equipe-ext')) : ?>
+												<a href="<?php echo $ext; ?>" target="_blank" class="team-bl-rdv">RDV</a>
+											<?php endif; ?>
+											<a href="<?php the_permalink(); ?>" class="team-bl-right">
+												<span class="team-bl-ttl"><?php the_title(); ?></span>
+												<span class="team-bl-job"><?php the_field('single_equipe-job'); ?></span>
+											</a>
+										</div>
+									</div>
+									<?php
+									$index++;
+								endwhile;
+								?>
+							</div>
+						</div>
+					<?php
+					endif;
+					wp_reset_postdata();
+					?>
+				</div>
+			</div>
+		</section>
+
+		<section class="page-team-section">
+			<div class="section-in section-lines">
+				<div class="container">
+					<?php
+					// The Query.
+					$args = array(
+						'posts_per_page' => -1,
+						'post_type' => 'equipe',
+						'meta_key' => 'single_equipe-pos',
+						'orderby' => 'meta_value_num',
+						'meta_type' => 'NUMBER',
+						'order' => 'ASC',
+						'meta_query' => array(
+							'relation'      => 'AND',
+							array(
+								'key'       => 'single_equipe-level',
 								'value'     => 'level1',
 								'compare'   => '=',
 							),
@@ -61,17 +126,17 @@ get_header();
 											<div class="team-bl-img">
 												<?php the_post_thumbnail(); ?>
 												<div class="team-bl-img-btn">
-													<a href="<?php the_permalink(); ?>" class="btn">Découvrir</a>
+													<div class="btn"><?php the_field('single_equipe-btntxt'); ?></div>
 												</div>
 											</div>
 											<div class="team-bl-info">
 												<?php if ($ext = get_field('single_equipe-ext')) : ?>
 													<a href="<?php echo $ext; ?>" target="_blank" class="team-bl-rdv">RDV</a>
 												<?php endif; ?>
-												<a href="<?php the_permalink(); ?>" class="team-bl-right">
+												<div class="team-bl-right">
 													<span class="team-bl-ttl"><?php the_title(); ?></span>
 													<span class="team-bl-job"><?php the_field('single_equipe-job'); ?></span>
-												</a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -101,7 +166,9 @@ get_header();
 					$args = array(
 						'posts_per_page' => -1,
 						'post_type' => 'equipe',
-						'orderby' => 'date',
+						'meta_key' => 'single_equipe-pos',
+						'orderby' => 'meta_value_num',
+						'meta_type' => 'NUMBER',
 						'order' => 'ASC',
 						'meta_query' => array(
 							'relation'      => 'AND',
@@ -129,12 +196,10 @@ get_header();
 										<div class="team-bl">
 											<div class="team-bl-img">
 												<?php the_post_thumbnail(); ?>
-												<div class="team-bl-img-btn">
-													<a href="<?php the_permalink(); ?>" class="btn">Découvrir</a>
-												</div>
+												<div class="team-bl-img-btn"></div>
 											</div>
-											<a href="<?php the_permalink(); ?>" class="team-bl-ttl"><?php the_title(); ?></a>
-											<a href="<?php the_permalink(); ?>" class="team-bl-job"><?php the_field('single_equipe-job'); ?></a>
+											<div class="team-bl-ttl"><?php the_title(); ?></div>
+											<div class="team-bl-job"><?php the_field('single_equipe-job'); ?></div>
 										</div>
 									</div>
 									<?php
@@ -163,7 +228,9 @@ get_header();
 					$args = array(
 						'posts_per_page' => -1,
 						'post_type' => 'equipe',
-						'orderby' => 'date',
+						'meta_key' => 'single_equipe-pos',
+						'orderby' => 'meta_value_num',
+						'meta_type' => 'NUMBER',
 						'order' => 'ASC',
 						'meta_query' => array(
 							'relation'      => 'AND',
@@ -191,12 +258,10 @@ get_header();
 										<div class="team-bl">
 											<div class="team-bl-img">
 												<?php the_post_thumbnail(); ?>
-												<div class="team-bl-img-btn">
-													<a href="<?php the_permalink(); ?>" class="btn">Découvrir</a>
-												</div>
+												<div class="team-bl-img-btn"></div>
 											</div>
-											<a href="<?php the_permalink(); ?>" class="team-bl-ttl"><?php the_title(); ?></a>
-											<a href="<?php the_permalink(); ?>" class="team-bl-job"><?php the_field('single_equipe-job'); ?></a>
+											<div class="team-bl-ttl"><?php the_title(); ?></div>
+											<div class="team-bl-job"><?php the_field('single_equipe-job'); ?></div>
 										</div>
 									</div>
 									<?php
