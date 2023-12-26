@@ -112,6 +112,27 @@
 
 
 
+    /*page notre cabinet*/
+    $(document).ready(function(){
+        $('.js-pageCabinGalCol').mouseover(function() {
+            if ($(window).width() > 991) {
+                var numCol = $(this).data('col');
+                var nextNumCol = (numCol % 2 !== 0) ? numCol+1 : numCol-1;
+                $(this).addClass('hovered');
+                $('.js-pageCabinGalCol[data-col="'+nextNumCol+'"]').addClass('sib-hovered');
+            }
+        });
+        $('.js-pageCabinGalCol').mouseleave(function() {
+            if ($(window).width() > 991) {
+                var numCol = $(this).data('col');
+                var nextNumCol = (numCol % 2 !== 0) ? numCol + 1 : numCol - 1;
+                $(this).removeClass('hovered');
+                $('.js-pageCabinGalCol[data-col="' + nextNumCol + '"]').removeClass('sib-hovered');
+            }
+        });
+    });
+    /*page notre cabinet*/
+
     /*trait tax team slider*/
     $(document).ready(function(){
         $('.js-teamTaxSlider').on("init reInit afterChange", function(event, slick) {

@@ -15,13 +15,33 @@
 get_header();
 ?>
 
-	<main class="page-text">
+	<main class="single_page">
+
+		<section class="top_section">
+			<div class="section-in section-lines">
+				<div class="container">
+					<h1 class="h1 top_section-ttl"><?php the_title(); ?></h1>
+					<div class="breadcrumbs">
+						<a href="<?php echo get_home_url(); ?>" class="crumb home">Accueil</a>
+						<span class="crumb last_crumb"><?php the_title(); ?></span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="single_page-wrap">
+			<div class="container">
+				<div class="content-block single_page-content"><?php the_content(); ?></div>
+			</div>
+		</section>
+
 		<div class="container">
-			<h1 class="h1 page-text-ttl mb-3"><?php the_title(); ?></h1>
-			<div class="content-block page-text-txt"><?php the_content(); ?></div>
+			<div class="single_page-ret">
+				<a href="javascript:history.back()" class="btn">Retour</a>
+			</div>
 		</div>
 
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_footer();

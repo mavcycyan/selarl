@@ -78,8 +78,9 @@ get_header();
 					</div>
 					<div class="page-cabin-gal-row">
 						<?php $i = 0; ?>
+						<?php $col = 1; ?>
 						<?php foreach($gal as $item) : ?>
-							<div class="col-12 col-md-6 page-cabin-gal-col">
+							<div class="col-12 col-md-6 page-cabin-gal-col js-pageCabinGalCol" data-col="<?php echo $col; ?>">
 								<div class="page-cabin-gal-bl" data-aos="fade-up" data-aos-duration="1000" <?php echo ($i != 0) ? 'data-aos-delay="200"' : ''; ?>>
 									<div class="page-cabin-gal-bl-img" <?php echo ($item['img']['url']) ? 'style="background-image: url(\'' . $item['img']['url'] . '\');"' : ''; ?>>
 										<div class="page-cabin-gal-bl-txt d-none d-md-block">
@@ -95,6 +96,7 @@ get_header();
 								</div>
 							</div>
 							<?php $i = ($i == 0) ? $i+1 : 0; ?>
+							<?php $col++; ?>
 						<?php endforeach; ?>
 					</div>
 				</div>

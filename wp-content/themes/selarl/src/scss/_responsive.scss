@@ -627,6 +627,26 @@
 /*single-team*/
 
 /*page-cabin*/
+@media screen and (min-width: 992px) {
+  .page-cabin {
+    &-gal {
+      &-col {
+        width: 50%;
+        max-width: none;
+        flex: unset;
+        transition: 0.3s;
+        &.hovered {
+          width: 55%;
+          transition: 0.3s;
+        }
+        &.sib-hovered {
+          width: 45%;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 991.98px) {
   .page-cabin {
     &-gal {
