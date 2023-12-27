@@ -33,8 +33,7 @@ $trait = get_queried_object();
 					$args = array(
 						'posts_per_page' => -1,
 						'post_type' => 'equipe',
-						'orderby' => 'date',
-						'order' => 'ASC',
+						'orderby' => 'post__in',
 						'post__in' => $team,
 					);
 					$the_query = new WP_Query( $args );
@@ -62,7 +61,11 @@ $trait = get_queried_object();
 													<div class="team-bl-img">
 														<?php the_post_thumbnail(); ?>
 														<div class="team-bl-img-btn">
-															<a href="<?php the_permalink(); ?>" class="btn">Découvrir</a>
+															<?php if (get_field('single_equipe-level') === 'level0') : ?>
+																<a href="<?php the_permalink(); ?>" class="btn"><?php the_field('single_equipe-btntxt'); ?></a>
+															<?php else : ?>
+																<div class="btn"><?php the_field('single_equipe-btntxt'); ?></div>
+															<?php endif; ?>
 														</div>
 													</div>
 													<div class="team-bl-info">
