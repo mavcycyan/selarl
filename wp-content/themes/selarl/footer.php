@@ -67,14 +67,39 @@
 				<div class="col-12 col-md-6 col-lg-3">
 					<div class="f-menu-ttl">Accès</div>
 					<div class="f-menu">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-footer-3',
-								'container'            => '',
-							)
-						);
-						?>
+						<div class="menu">
+							<ul>
+								<?php
+								$addr = get_field('f-addr', 'options');
+								if ($addr) :
+								?>
+								<li>
+									<a href="<?php echo $addr['link']; ?>" target="_blank"><?php echo $addr['txt']; ?></a>
+								</li>
+								<?php endif; ?>
+
+								<?php
+								$phn = get_field('f-phn', 'options');
+								if ($phn) :
+								?>
+								<li>
+									<a href="tel:<?php echo str_replace(['(', ')', '-', '_', ' '], '', $phn); ?>"><?php echo $phn; ?></a>
+								</li>
+								<?php endif; ?>
+
+								<?php
+								$insta = get_field('f-insta', 'options');
+								if ($insta) :
+									?>
+									<li>
+										<span>Instagram</span>
+									</li>
+									<li>
+										<a href="<?php echo $insta['link']; ?>" target="_blank"><?php echo $insta['txt']; ?></a>
+									</li>
+								<?php endif; ?>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="col-12">

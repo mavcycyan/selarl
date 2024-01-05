@@ -179,9 +179,14 @@
 	<?php $hide = get_field('main-contacts-hid', 2); ?>
 	<?php if (!$hide) : ?>
 		<div class="modal_window js-modal" data-modal="contacts">
-			<div class="modal_window-overlay js-modalClose"></div>
+			<div class="modal_window-overlay js-modalClose  js-modalContClose"></div>
 			<div class="modal_window-wrap modal_window-wrap_contacts">
-				<div class="modal_window-cls js-modalClose">
+				<div class="modal_window-wrap_contacts-success js-modalContSuccess">
+					<div class="form-ttl">Voilà</div>
+					<div class="form-txt">Votre message a été envoyé avec succès !</div>
+
+				</div>
+				<div class="modal_window-cls js-modalClose  js-modalContClose">
 					<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M22.5 7.5L7.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>
 						<path d="M7.5 7.5L22.5 22.5" stroke="white" stroke-linecap="square" stroke-linejoin="round"/>

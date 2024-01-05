@@ -902,6 +902,9 @@
           width: 230px;
           max-width: 100%;
         }
+        div.btn {
+          cursor: default;
+        }
       }
       &:hover {
         .team-bl-img {

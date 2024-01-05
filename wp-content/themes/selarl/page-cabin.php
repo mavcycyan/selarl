@@ -71,7 +71,7 @@ get_header();
 
 		<?php $gal = get_field('page-cabin-gal'); ?>
 		<?php if ($gal && count($gal) > 0) : ?>
-			<section class="page-cabin-gal">
+			<section id="technologies" class="page-cabin-gal">
 				<div class="section-in section-lines">
 					<div class="container">
 						<h2 class="h2 page-cabin-gal-ttl">Technologies du cabinet</h2>

@@ -49,6 +49,8 @@
     });
     /*traitements image worker*/
 
+    /*form*/
+
     /*page team slider*/
     $(document).ready(function(){
 
@@ -346,5 +348,20 @@
         });
     })
     /*modal-patient*/
+
+    /*form*/
+    $(document).ready(function() {
+        document.addEventListener('wpcf7mailsent', function(event) {
+            console.log(event.detail);
+            if (6 == event.detail.contactFormId) {
+                $('.js-modalContSuccess').addClass('active');
+            }
+        }, false);
+    });
+
+    $('.js-modalContClose').click(function(){
+        $('.js-modalContSuccess').removeClass('active');
+    });
+    /*form*/
 
 }( jQuery ) );

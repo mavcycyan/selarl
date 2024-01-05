@@ -72,10 +72,18 @@ $trait = get_queried_object();
 														<?php if ($ext = get_field('single_equipe-ext')) : ?>
 															<a href="<?php echo $ext; ?>" target="_blank" class="team-bl-rdv">RDV</a>
 														<?php endif; ?>
-														<a href="<?php the_permalink(); ?>" class="team-bl-right">
-															<span class="team-bl-ttl"><?php the_title(); ?></span>
-															<span class="team-bl-job"><?php the_field('single_equipe-job'); ?></span>
-														</a>
+
+														<?php if (get_field('single_equipe-level')['value'] === 'main') : ?>
+															<a href="<?php the_permalink(); ?>" class="team-bl-right">
+																<span class="team-bl-ttl"><?php the_title(); ?></span>
+																<span class="team-bl-job"><?php the_field('single_equipe-job'); ?></span>
+															</a>
+														<?php else : ?>
+															<span class="team-bl-right">
+																<span class="team-bl-ttl"><?php the_title(); ?></span>
+																<span class="team-bl-job"><?php the_field('single_equipe-job'); ?></span>
+															</span>
+														<?php endif; ?>
 													</div>
 												</div>
 											</div>
