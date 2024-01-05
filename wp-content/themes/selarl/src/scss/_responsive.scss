@@ -170,7 +170,6 @@
       &-back {
         display: none;
       }
-
       &-row {
         position: static;
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="347" height="1075" viewBox="0 0 347 1075" fill="none"><path d="M346 294.726L346 61C346 27.8629 319.137 0.999999 286 0.999997L61.0001 0.999988C27.863 0.999986 1.00006 27.8629 1.00006 61L1.00005 297.043C1.00005 330.18 27.863 357.043 61 357.043L286 357.043C319.137 357.043 346 383.906 346 417.043L346 657.332C346 690.469 319.137 717.332 286 717.332L61 717.332C27.8629 717.332 1.00003 744.195 1.00003 777.332L1.00002 1014C1.00001 1047.14 27.8629 1074 61 1074L286 1074C319.137 1074 346 1047.14 346 1014L346 780.274" stroke="white" stroke-linecap="round"/></svg>');
@@ -186,6 +185,31 @@
         min-height: 306px;
         height: 306px;
         padding: 32px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        &-bg {
+          display: none;
+        }
+        &-img {
+          width: 100px;
+        }
+        &-ttl {
+          font-size: 16px;
+          width: calc(100% - 100px);
+          padding-left: 10px;
+        }
+        &-txt {
+          font-size: 13px;
+        }
+        &:nth-child(2) {
+          .main-values-bl {
+            justify-content: flex-end;
+            &-img {
+              order: 1;
+            }
+          }
+        }
       }
     }
     &-traits {
@@ -251,25 +275,17 @@
         margin-bottom: 28px;
       }
       &-bl {
-        &-bg {
-          opacity: 1;
-          width: calc(100% - 20px);
-          height: calc(100% - 20px);
-          top: 10px;
-          left: 10px;
-        }
+        //&-bg {
+        //  opacity: 1;
+        //  width: calc(100% - 20px);
+        //  height: calc(100% - 20px);
+        //  top: 10px;
+        //  left: 10px;
+        //}
         &-img {
           svg {
             width: 100px;
             height: auto;
-          }
-        }
-        &:nth-child(2) {
-          .main-values-bl {
-            justify-content: flex-end;
-            &-img {
-              order: 1;
-            }
           }
         }
       }
@@ -470,6 +486,23 @@
     &-section {
       .section-in {
         padding: 7vw 0;
+      }
+    }
+  }
+  .team {
+    &-slider {
+      &-pagination {
+        &-arrows {
+          .slider__arrows {
+            &.next__arrows, &.prev__arrows {
+              &:hover {
+                svg {
+                  animation: none;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

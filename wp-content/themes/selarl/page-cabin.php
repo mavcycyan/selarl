@@ -84,8 +84,10 @@ get_header();
 								<div class="page-cabin-gal-bl" data-aos="fade-up" data-aos-duration="1000" <?php echo ($i != 0) ? 'data-aos-delay="200"' : ''; ?>>
 									<div class="page-cabin-gal-bl-img" <?php echo ($item['img']['url']) ? 'style="background-image: url(\'' . $item['img']['url'] . '\');"' : ''; ?>>
 										<div class="page-cabin-gal-bl-txt d-none d-md-block">
-											<div class="page-cabin-gal-bl-txt-in">
-												<?php echo $item['txt'] ?>
+											<div class="page-cabin-gal-bl-txt-in-wrap">
+												<div class="page-cabin-gal-bl-txt-in">
+													<?php echo $item['txt'] ?>
+												</div>
 											</div>
 										</div>
 									</div>

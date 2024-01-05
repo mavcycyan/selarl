@@ -50,9 +50,7 @@ $posts_per_page = 6;
 							$args = array(
 								'number' => '',
 								'hide_empty' => false,
-								'taxonomy' => 'faq-categories',
-								'orderby' => 'term_id',
-								'order' => 'ASC'
+								'taxonomy' => 'faq-categories'
 							);
 							$terms = get_terms($args);
 

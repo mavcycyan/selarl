@@ -43,7 +43,7 @@ $trait = get_queried_object();
 						?>
 						<div class="tax-trait-team-wrap">
 							<div class="row">
-								<div class="col-12 col-md-6 col-lg-4">
+								<div class="col-12 col-md-6 col-lg-4 d-flex flex-column justify-content-between">
 									<h2 class="h2 tax-trait-team-subttl">Notre equipe</h2>
 									<div class="team-slider-pagination js-teamTaxSliderPagination">
 										<div class="team-slider-pagination-counter js-teamTaxSliderCounter"></div>
@@ -61,7 +61,7 @@ $trait = get_queried_object();
 													<div class="team-bl-img">
 														<?php the_post_thumbnail(); ?>
 														<div class="team-bl-img-btn">
-															<?php if (get_field('single_equipe-level') === 'level0') : ?>
+															<?php if (get_field('single_equipe-level')['value'] === 'main') : ?>
 																<a href="<?php the_permalink(); ?>" class="btn"><?php the_field('single_equipe-btntxt'); ?></a>
 															<?php else : ?>
 																<div class="btn"><?php the_field('single_equipe-btntxt'); ?></div>
@@ -106,6 +106,7 @@ $trait = get_queried_object();
 					'post_type' => 'traitements',
 					'orderby' => 'date',
 					'order' => 'ASC',
+					'traitement' => get_queried_object()->slug,
 				);
 				$the_query = new WP_Query( $args );
 

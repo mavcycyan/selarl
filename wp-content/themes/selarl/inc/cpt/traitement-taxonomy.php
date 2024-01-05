@@ -16,12 +16,16 @@ function tx_traitement_init() {
     );
 
     $args = array(
-        'hierarchical'      => true,
         'labels'            => $labels,
-        'show_ui'           => true,
+        'hierarchical' => true,
+        'show_ui' => true,
         'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'traitement' ),
+        'query_var' => true,
+        'show_in_rest'          => true,
+        'rewrite'               => array(
+            'slug'          => 'traitements',
+            'with_front'    => true,
+        ),
     );
 
     register_taxonomy( 'traitement', array( 'traitements' ), $args );

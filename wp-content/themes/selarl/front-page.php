@@ -171,9 +171,7 @@ get_header();
 						$args = array(
 							'number' => 10,
 							'hide_empty' => false,
-							'taxonomy' => 'traitement',
-							'orderby' => 'term_id',
-							'order' => 'ASC'
+							'taxonomy' => 'traitement'
 						);
 						$terms = get_terms($args);
 

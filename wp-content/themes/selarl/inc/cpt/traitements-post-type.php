@@ -30,17 +30,14 @@ function pt_traitements_init() {
 
     $args = array(
         'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'traitements' ),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'show_in_rest'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => null,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'query_var'             => true,
+        'rewrite' => array( 'slug'=>'traitements/%traitement%', 'with_front' => false ),
+        'has_archive'           => true,
+        'menu_position'         => 8,
+        'show_in_rest'          => true,
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
     );
 
@@ -48,3 +45,22 @@ function pt_traitements_init() {
 }
 
 add_action( 'init', 'pt_traitements_init' );
+
+
+
+function tx_traitement_category_permalink( $permalink, $post ){
+    if( strpos($permalink, '%traitement%') === FALSE )
+        return $permalink;
+
+    $terms = get_the_terms($post, 'traitement');
+
+    if( ! is_wp_error($terms) && !empty($terms) && is_object($terms[0]) ){
+        $taxonomy_slug = $terms[0]->slug;
+    }else{
+        $taxonomy_slug = '';
+    }
+
+    return str_replace('%traitement%', $taxonomy_slug, $permalink );
+}
+
+add_filter('post_type_link', 'tx_traitement_category_permalink', 1, 2);

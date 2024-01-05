@@ -53,13 +53,14 @@
     $(document).ready(function(){
 
         $('.js-teamSlider').each(function() {
-            $(this).on("init reInit afterChange", function(event, slick) {
+            $(this).on("init reInit beforeChange", function(event, slick, currentSlide, nextSlide) {
                 $(this).closest('section').find('.js-teamSliderPagination').removeClass('d-none');
                 var cnt = slick.options.slidesToScroll;
+                var slideNum = (nextSlide === undefined) ? 1 : nextSlide + 1;
                 $(this).closest('section').find(".js-teamSliderCounter").html(
-                    '<span>' + (Math.ceil(slick.slickCurrentSlide() / cnt) + 1) + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
+                    '<span>' + slideNum + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
                 );
-                if (Math.ceil(slick.slideCount / cnt) <= 1) {
+                if (Math.ceil(slick.slideCount / slick.options.slidesToShow) <= 1) {
                     $(this).closest('section').find('.js-teamSliderPagination').addClass('d-none');
                 }
             });
@@ -67,8 +68,6 @@
                 if ($(window).width() >= 992) {
                     var _this =  $(this);
                     var cnt = slick.options.slidesToScroll;
-                    console.log(slick.slideCount);
-                    console.log(cnt);
                     setTimeout(function(){
                         if (Math.ceil(slick.slideCount / cnt) <= 1) {
                             _this.find('.slick-track').width(_this.find('.slick-list').width());
@@ -87,7 +86,7 @@
                 autoplaySpeed: 5000,
                 speed: 1500,
                 slidesToShow: 4,
-                slidesToScroll: 4,
+                slidesToScroll: 1,
                 appendArrows: $(this).closest('section').find('.js-teamSliderArrows'),
                 responsive: [
                     {
@@ -135,13 +134,14 @@
 
     /*trait tax team slider*/
     $(document).ready(function(){
-        $('.js-teamTaxSlider').on("init reInit afterChange", function(event, slick) {
+        $('.js-teamTaxSlider').on("init reInit beforeChange", function(event, slick, currentSlide, nextSlide) {
             $('.js-teamTaxSliderPagination').removeClass('d-none');
             var cnt = slick.options.slidesToScroll;
+            var slideNum = (nextSlide === undefined) ? 1 : nextSlide + 1;
             $(".js-teamTaxSliderCounter").html(
-                '<span>' + (Math.ceil(slick.slickCurrentSlide() / cnt) + 1) + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
+                '<span>' + slideNum + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
             );
-            if (Math.ceil(slick.slideCount / cnt) <= 1) {
+            if (Math.ceil(slick.slideCount / slick.options.slidesToShow) <= 1) {
                 $('.js-teamTaxSliderPagination').addClass('d-none');
             }
         });
@@ -155,7 +155,7 @@
             autoplaySpeed: 5000,
             speed: 1500,
             slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             appendArrows: $('.js-teamTaxSliderArrows'),
             responsive: [
                 {
@@ -291,11 +291,12 @@
 
     /*top section slider*/
     $(document).ready(function(){
-        $('.js-tssSlider').on("init reInit afterChange", function(event, slick) {
+        $('.js-tssSlider').on("init reInit beforeChange", function(event, slick, currentSlide, nextSlide) {
             $('.js-tssSliderPagination').removeClass('d-none');
             var cnt = slick.options.slidesToScroll;
+            var slideNum = (nextSlide === undefined) ? 1 : nextSlide + 1;
             $(".js-tssSliderCounter").html(
-                '<span>' + (Math.ceil(slick.slickCurrentSlide() / cnt) + 1) + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
+                '<span>' + slideNum + '</span><span class="sep"></span><span class="all">' + (Math.ceil(slick.slideCount / cnt)) + '</span>'
             );
             if (Math.ceil(slick.slideCount / cnt) <= 1) {
                 $('.js-tssSliderPagination').addClass('d-none');

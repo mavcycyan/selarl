@@ -22,6 +22,7 @@ function tx_clinique_init() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'clinique' ),
+        'show_in_rest' => true,
     );
 
     register_taxonomy( 'clinique', array( 'cas-cliniques' ), $args );

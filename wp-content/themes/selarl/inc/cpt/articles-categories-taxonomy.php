@@ -22,6 +22,7 @@ function tx_articles_categories_init() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'articles-categories' ),
+        'show_in_rest' => true,
     );
 
     register_taxonomy( 'articles-categories', array( 'articles' ), $args );

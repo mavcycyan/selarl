@@ -22,6 +22,7 @@ function tx_faq_categories_init() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'faq-categories' ),
+        'show_in_rest' => true,
     );
 
     register_taxonomy( 'faq-categories', array( 'faq' ), $args );
