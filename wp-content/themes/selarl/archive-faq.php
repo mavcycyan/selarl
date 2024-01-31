@@ -74,9 +74,7 @@ $posts_per_page = 6;
 							$args = array(
 								'posts_per_page' => $posts_per_page,
 								'post_type' => 'faq',
-								'paged' => $paged,
-								'orderby' => 'date',
-								'order' => 'ASC',
+								'paged' => $paged
 							);
 							$the_query = new WP_Query( $args );
 

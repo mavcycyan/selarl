@@ -33,6 +33,10 @@
         $('.js-fixData').removeClass('active');
         $('.js-header').removeClass('d-none');
     });
+    $('.js-fixData .menu a').click(function() {
+        $('.js-fixData').removeClass('active');
+        $('.js-header').removeClass('d-none');
+    });
     /*header*/
 
     /*rdv*/
@@ -360,7 +364,7 @@
     });
 
     $('.js-modalContClose').click(function(){
-        $('.js-modalContSuccess').removeClass('active');
+        $('.js-modalContSuccess').removeClas+s('active');
     });
     /*form*/
 

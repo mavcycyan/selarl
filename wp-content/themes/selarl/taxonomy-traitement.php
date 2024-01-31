@@ -15,6 +15,10 @@ $trait = get_queried_object();
 	<main class="tax-trait">
 
 		<section class="tax-trait-top">
+			<?php $term_img = get_field('ctrait-img-top', $trait); ?>
+			<?php if ($term_img && isset($term_img['url'])) : ?>
+			<div class="tax-trait-top-img" style="background-image: url('<?php echo $term_img['url']; ?>');"></div>
+			<?php endif; ?>
 			<div class="section-in section-lines">
 				<div class="container">
 					<h1 class="h1 tax-trait-ttl"><?php echo $trait->name; ?></h1>

@@ -86,7 +86,7 @@ $posts_per_page = 16;
 										<div class="arch-articles-posts-bl-ttl"><?php the_title(); ?></div>
 										<?php $pdf = get_field('arch-articles-pdf'); ?>
 										<div class="arch-articles-posts-bl-btn">
-											<a href="<?php echo $pdf; ?>">Découvrir</a>
+											<a href="<?php echo ($pdf && $pdf != '') ? $pdf : '#'; ?>" target="_blank">Découvrir</a>
 										</div>
 									</div>
 								</div>

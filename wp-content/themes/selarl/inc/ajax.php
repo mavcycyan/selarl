@@ -273,8 +273,11 @@ function articles_ajax() {
             $html .= '        <div class="arch-articles-posts-bl-ttl">' . get_the_title() . '</div>';
             $pdf = get_field('arch-articles-pdf');
             $html .= '        <div class="arch-articles-posts-bl-btn">';
-            $html .= '            <a href="' . $pdf . '">Voir plus</a>';
+            $html .= '            <a href="';
+            $html .= ($pdf && $pdf != '') ? $pdf : '#';
+            $html .= '" target="_blank">Voir plus</a>';
             $html .= '        </div>';
+            $html .= '    </div>';
             $html .= '</div>';
         endwhile;
     endif;
@@ -299,7 +302,7 @@ function articles_ajax() {
     }
     $the_query = new WP_Query( $args );
     if ( $the_query->have_posts() ) :
-        if ( $the_query->post_count >= ($posts_per_page * ($paged + 1)) ) :
+        if ( $the_query->post_count >= ($posts_per_page * $paged) ) :
             $pagination = true;
         endif;
     endif;

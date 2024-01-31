@@ -28,6 +28,31 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_65ba149ac1aef",
+            "label": "Image top",
+            "name": "ctrait-img-top",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_6554f0674efd0",
             "label": "Equipe",
             "name": "ctrait-team",
@@ -328,5 +353,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1704454938
+    "modified": 1706693799
 }
