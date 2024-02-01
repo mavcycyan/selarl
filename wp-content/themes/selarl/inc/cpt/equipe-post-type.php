@@ -37,7 +37,7 @@ function pt_equipe_init() {
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'equipe' ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'show_in_rest'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,

@@ -37,7 +37,7 @@ function pt_cas_cliniques_init() {
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'cas-cliniques' ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
+        'has_archive'        => false,
         'show_in_rest'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,

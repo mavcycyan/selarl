@@ -65,7 +65,9 @@
   .fix_data {
     &-menu {
       ul {
+        margin: 0 -12px 30px;
         li {
+          padding: 0 12px 30px;
           width: 100%;
         }
       }

@@ -86,9 +86,17 @@ a, abbr, acronym, address, applet, article, aside, audio, big, blockquote, canva
 }
 
 a, button, input {
+    box-shadow: none;
+    outline: 0;
     transition: 0.3s;
     &:hover {
+        box-shadow: none;
+        outline: 0;
         transition: 0.3s;
+    }
+    &:focus {
+        box-shadow: none;
+        outline: 0;
     }
 }
 
@@ -198,6 +206,10 @@ main {
         color: $color_dark;
         transition: 0.3s;
         font-style: normal;
+    }
+    &:focus {
+        box-shadow: none;
+        outline: 0;
     }
     @media (max-width: 1599.98px) {
         padding: 44px 20px;

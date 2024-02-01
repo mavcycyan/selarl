@@ -169,9 +169,15 @@
       ul {
         border-radius: 10px;
         border: 1px solid $color_white;
-        background: rgba(11, 31, 48, 0.70);
+        background: rgba(11, 31, 48, 0.7);
         backdrop-filter: blur(14px);
         padding: 12px 30px;
+        li {
+          padding: 9px 0;
+          a {
+            font-size: 16px;
+          }
+        }
       }
     }
   }
@@ -227,7 +233,7 @@
     padding: 16px 0 61px;
   }
   &-menu {
-    padding-top: 7vw;
+    padding-top: 5vw;
     ul {
       display: flex;
       margin: 0 -15px 30px;
@@ -292,7 +298,7 @@
     }
   }
   &-contacts {
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     .main-contacts-bl {
       min-height: 25vw;
     }
