@@ -79,6 +79,17 @@
     &-contacts {
       padding-bottom: 0;
     }
+    &-menu {
+      ul {
+        li.menu-item-has-children {
+          .sub-menu {
+            li {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 /*fix_data*/
