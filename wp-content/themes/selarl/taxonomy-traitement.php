@@ -37,8 +37,8 @@ $trait = get_queried_object();
 					$args = array(
 						'posts_per_page' => -1,
 						'post_type' => 'equipe',
-						'orderby' => 'post__in',
-						'post__in' => $team,
+						'post__in'  => $team,
+						'orderby'   => 'post__in',
 					);
 					$the_query = new WP_Query( $args );
 
@@ -130,9 +130,8 @@ $trait = get_queried_object();
 						$the_query->the_post();
 						?>
 					<div class="tax-trait-posts-bl">
-						<div class="tax-trait-posts-bl-img">
-							<?php the_post_thumbnail(); ?>
-						</div>
+						<?php $link = get_the_post_thumbnail_url(); ?>
+						<div class="tax-trait-posts-bl-img" <?php echo ($link && $link !== '') ? 'style="background-image: url(\'' . $link . '\')";' : ''; ?>></div>
 						<div class="tax-trait-posts-bl-data">
 							<div class="tax-trait-posts-bl-ttl"><?php the_title(); ?></div>
 							<div class="tax-trait-posts-bl-txt"><?php the_excerpt(); ?></div>
@@ -204,33 +203,35 @@ $trait = get_queried_object();
 
 
 		<?php
-			$clin = get_field('tax-trait-clin', $trait);
-		?>
-		<?php if ($clin && ($clin['ttl'] || $clin['txt'] || $clin['img'])) : ?>
-			<section class="tax-trait-clin">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 col-lg-6">
-							<?php if (isset($clin['img']) && $clin['img'] != '') : ?>
-								<div class="tax-trait-clin-img">
-									<img src="<?php echo $clin['img']['sizes']['trait-clin']; ?>" alt="<?php echo $clin['img']['name']; ?>">
-								</div>
-							<?php endif; ?>
-						</div>
-						<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
-							<h2 class="h2 tax-trait-clin-ttl"><?php echo $clin['ttl']; ?></h2>
-							<div class="tax-trait-clin-txt"><?php echo $clin['txt']; ?></div>
-							<?php if (isset($clin['link']) && $clin['link'] != '' && $clin['link']['link'] != '') : ?>
-								<div class="tax-trait-clin-btn">
-									<a href="<?php echo $clin['link']['link']; ?>" <?php echo ($clin['link']['blank']) ? 'target="_blank"' : ""; ?> class="btn">Découvrir tous les cas</a>
-								</div>
-							<?php endif; ?>
+			$hide = get_field('tax-trait-clin-hid', $trait);
+			if (!$hide) :
+				$clin = get_field('tax-trait-clin', 'options');
+			?>
+			<?php if ($clin && ($clin['ttl'] || $clin['txt'] || $clin['img'])) : ?>
+				<section class="tax-trait-clin">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<?php if (isset($clin['img']) && $clin['img'] != '') : ?>
+									<div class="tax-trait-clin-img">
+										<img src="<?php echo $clin['img']['sizes']['trait-clin']; ?>" alt="<?php echo $clin['img']['name']; ?>">
+									</div>
+								<?php endif; ?>
+							</div>
+							<div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+								<h2 class="h2 tax-trait-clin-ttl"><?php echo $clin['ttl']; ?></h2>
+								<div class="tax-trait-clin-txt"><?php echo $clin['txt']; ?></div>
+								<?php if (isset($clin['link']) && $clin['link'] != '' && $clin['link']['link'] != '') : ?>
+									<div class="tax-trait-clin-btn">
+										<a href="<?php echo $clin['link']['link']; ?>" <?php echo ($clin['link']['blank']) ? 'target="_blank"' : ""; ?> class="btn">Découvrir tous les cas</a>
+									</div>
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<?php unset($second_img); ?>
-		<?php endif; unset($hide); ?>
+				</section>
+				<?php unset($clin); ?>
+			<?php endif; endif; unset($hide); ?>
 
 		<div class="tax-trait-mainp">
 			<?php $hide = get_field('main-faq-hid', 2); ?>
@@ -282,6 +283,11 @@ $trait = get_queried_object();
 									</div>
 								</div>
 								<div class="main-contacts-bl">
+									<?php if (isset($contacts_blocks['second']['bg']) && $contacts_blocks['second']['bg']['url'] != ''): ?>
+										<?php if ($contacts_blocks['second']['bg'] && $contacts_blocks['second']['bg']['url'] !== ''): ?>
+											<div class="main-contacts-bl-bg" style="background-image: url('<?php echo $contacts_blocks['second']['bg']['url']; ?>');"></div>
+										<?php endif; ?>
+									<?php endif; ?>
 									<?php if (isset($contacts_blocks['second']['link_data']['link']) && $contacts_blocks['second']['link_data']['link'] != '') : ?>
 										<div class="main-contacts-bl-btn">
 											<a href="<?php echo $contacts_blocks['second']['link_data']['link']; ?>" <?php echo ($contacts_blocks['second']['link_data']['blank']) ? 'target="_blank"' : ""; ?> class="btn">Visite virtuelle de <br>notre cabinet</a>

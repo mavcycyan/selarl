@@ -1245,6 +1245,8 @@
     &-bl {
       position: relative;
       margin-bottom: 20px;
+      border-radius: 20px;
+      background-color: $color_dark;
       &:last-child {
         margin-bottom: 0;
       }

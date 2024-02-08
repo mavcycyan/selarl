@@ -379,6 +379,30 @@
     }
   }
 }
+@media (min-width: 992px) {
+  .tax-trait {
+    &-posts {
+      overflow: visible;
+      &-bl {
+        min-height: 36.5vw;
+        position: sticky;
+        top: 89px;
+        overflow: hidden;
+        &-img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          top: 0;
+          left: 0;
+          background-repeat: no-repeat;
+          z-index: 1;
+          background-position: center center;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 991.98px) {
   .tax-trait {
     &-crs {
